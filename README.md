@@ -1,15 +1,11 @@
 # Dingtalk
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/dingtalk`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'dingtalk'
+gem 'dingtalk-ruby'
 ```
 
 And then execute:
@@ -18,9 +14,16 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install dingtalk
+    $ gem install dingtalk-ruby
 
 ## Usage
+
+```ruby
+request = Dingtalk::Api::OapiGettokenRequest("https://oapi.dingtalk.com/gettoken")
+request.userid = "userid1"
+response = request.getResponse()
+puts response
+```
 
 TODO: Write usage instructions here
 
