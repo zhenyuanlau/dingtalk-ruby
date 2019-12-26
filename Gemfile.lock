@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dingtalk-ruby (0.1.0)
+    dingtalk-ruby (0.1.1)
       activesupport
       faraday
 
@@ -80,4 +80,4 @@ DEPENDENCIES
   rubocop
 
 BUNDLED WITH
-   2.0.2
+   2.1.0
