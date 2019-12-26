@@ -1,6 +1,5 @@
 require "dingtalk/version"
 require "dingtalk/api/Base"
-require 'pry'
 
 # Dingtalk top namespace
 module Dingtalk
