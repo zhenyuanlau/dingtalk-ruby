@@ -124,12 +124,12 @@ module Dingtalk
         # puts "result:", result
         jsonobj = JSON.parse(result)
         if jsonobj.key?(P_CODE) && (jsonobj[P_CODE] != 0)
-          # error = TopException.new
-          # error.errcode = jsonobj[P_CODE]
-          # error.errmsg = jsonobj[P_MSG]
-          # error.application_host = response.headers.fetch("Application-Host", "")
-          # error.service_host = response.headers.fetch("Location-Host", "")
-          raise Error, "TopException"
+          error = TopException.new
+          error.errcode = jsonobj[P_CODE]
+          error.errmsg = jsonobj[P_MSG]
+          error.application_host = response.headers.fetch("Application-Host", "")
+          error.service_host = response.headers.fetch("Location-Host", "")
+          raise error, "TopException"
         end
 
         jsonobj

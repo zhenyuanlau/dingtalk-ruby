@@ -5,6 +5,13 @@ require "dingtalk/api/Base"
 module Dingtalk
   class Error < StandardError; end
   class RequestException < RuntimeError; end
+  class TopException < RuntimeError
+    attr_accessor :errcode, :errmsg, :application_host, :service_host
+    
+    def to_s
+      "\nerrcode= #{@errcode}\nerrmsg=#{@errmsg}\napplication_host=#{@application_host}\nservice_host=#{@service_host}"
+    end
+  end
 
   class << self
     attr_accessor :configuration
